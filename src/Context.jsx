@@ -5,7 +5,7 @@ import {io} from "socket.io-client";
 
 const SocketContext = createContext();
 
-const socket = io("http://localhost:5001");
+const socket = io("/");
 
 const ContextProvider = ({children}) => {
   const [stream, setStream] = useState(null);
