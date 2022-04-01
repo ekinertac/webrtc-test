@@ -1,4 +1,7 @@
-const app = require("express")();
+const express = require("express");
+const path = require('path');
+const app = express();
+
 const server = require("http").createServer(app);
 const cors = require("cors");
 
@@ -10,6 +13,7 @@ const io = require("socket.io")(server, {
 });
 
 app.use(cors());
+app.use(express.static(path.resolve(__dirname, "./build")));
 
 const PORT = process.env.PORT || 5001;
 
